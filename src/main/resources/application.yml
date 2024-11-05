@@ -1,0 +1,40 @@
+server:
+  port: 9000
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+    # 로컬 개발 환경
+    url: jdbc:mysql://localhost:43306/userservice
+    username: root
+    password: 1234
+
+    # 컨테이너 로컬 개발 환경
+    # url: jdbc:mysql://172.17.0.3:43306/userservice
+    # username: test
+    # password: 1234
+
+    # 운영 환경
+    # url: jdbc:mysql://172.17.0.3:3306/userservice
+    # username: root
+    # password: 1234
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+      # ddl-auto: run
+#    properties:
+#      hibernate:
+#        show-sql: true
+#        format-sql: true
+
+# 바인딩 파라미터 확인
+logging:
+  level:
+    org:
+      hibernate:
+        orm:
+          jdbc:
+            bind: trace
