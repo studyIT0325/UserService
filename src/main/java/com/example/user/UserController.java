@@ -23,7 +23,7 @@ public class UserController {
 	public String getUsers(Model model) {
 		List<User> users = userRepository.findAll();
 		model.addAttribute("users", users);
-		// log.info("가져온 유저 정보: {}", users);
+		log.info("가져온 유저 정보: {}", users);
 		
 		return "index";
 	}
